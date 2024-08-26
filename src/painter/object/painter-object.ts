@@ -103,8 +103,8 @@ export class PainterObject extends TgdPainter {
             attPos: "vec3",
             attUV: "vec2",
         })
-        dataset.set("attPos", glb.getBufferViewData(POSITION))
-        dataset.set("attUV", glb.getBufferViewData(TEXCOORD_0))
+        dataset.set("attPos", glb.getBufferViewData(POSITION, "Float32"))
+        dataset.set("attUV", glb.getBufferViewData(TEXCOORD_0, "Float32"))
         const elements = glb.getBufferViewData(indices)
         this.elementsType = webglElementTypeFromTypedArray(elements)
         this.vao = context.createVAO(prg, [dataset], elements)

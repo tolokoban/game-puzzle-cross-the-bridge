@@ -9,6 +9,14 @@ export interface Assets {
     riverMesh: ArrayBuffer
     worldTexture: HTMLImageElement
     worldMesh: ArrayBuffer
+    body1Texture: HTMLImageElement
+    body1Mesh: ArrayBuffer
+    body2Texture: HTMLImageElement
+    body2Mesh: ArrayBuffer
+    body5Texture: HTMLImageElement
+    body5Mesh: ArrayBuffer
+    body10Texture: HTMLImageElement
+    body10Mesh: ArrayBuffer
 }
 
 class AssetsLoader {
@@ -20,6 +28,14 @@ class AssetsLoader {
         riverMesh: "./assets/river.glb",
         worldTexture: "./assets/world.2k.avif",
         worldMesh: "./assets/world.glb",
+        body1Texture: "./assets/body-1.avif",
+        body1Mesh: "./assets/body-1.glb",
+        body2Texture: "./assets/body-2.avif",
+        body2Mesh: "./assets/body-2.glb",
+        body5Texture: "./assets/body-5.avif",
+        body5Mesh: "./assets/body-5.glb",
+        body10Texture: "./assets/body-10.avif",
+        body10Mesh: "./assets/body-10.glb",
     })
 }
 
@@ -35,6 +51,14 @@ function load(urls: { [key in keyof Assets]: string }): Promise<Assets> {
                     riverMesh,
                     worldTexture,
                     worldMesh,
+                    body1Texture,
+                    body1Mesh,
+                    body2Texture,
+                    body2Mesh,
+                    body5Texture,
+                    body5Mesh,
+                    body10Texture,
+                    body10Mesh,
                 ] = await Promise.all([
                     loadImage(urls.background),
                     loadImage(urls.bridgeTexture),
@@ -43,6 +67,14 @@ function load(urls: { [key in keyof Assets]: string }): Promise<Assets> {
                     loadMesh(urls.riverMesh),
                     loadImage(urls.worldTexture),
                     loadMesh(urls.worldMesh),
+                    loadImage(urls.body1Texture),
+                    loadMesh(urls.body1Mesh),
+                    loadImage(urls.body2Texture),
+                    loadMesh(urls.body2Mesh),
+                    loadImage(urls.body5Texture),
+                    loadMesh(urls.body5Mesh),
+                    loadImage(urls.body10Texture),
+                    loadMesh(urls.body10Mesh),
                 ])
                 resolve({
                     background,
@@ -52,6 +84,14 @@ function load(urls: { [key in keyof Assets]: string }): Promise<Assets> {
                     riverMesh,
                     worldTexture,
                     worldMesh,
+                    body1Texture,
+                    body1Mesh,
+                    body2Texture,
+                    body2Mesh,
+                    body5Texture,
+                    body5Mesh,
+                    body10Texture,
+                    body10Mesh,
                 })
             } catch (ex) {
                 reject(ex)

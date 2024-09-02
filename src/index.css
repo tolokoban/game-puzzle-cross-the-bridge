@@ -31,7 +31,9 @@ hr {
     );
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
 
@@ -43,8 +45,8 @@ button {
     line-height: 2em;
     padding: 0 1em;
     font-weight: bold;
-    border-radius: .25em;
-    box-shadow: 0 .125em .125em #0007;
+    border-radius: 0.25em;
+    box-shadow: 0 0.125em 0.125em #0007;
 }
 
 #progress-container.show {
@@ -60,4 +62,3 @@ button {
     width: 80%;
     height: 1rem;
 }
-
